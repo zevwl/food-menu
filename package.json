@@ -1,0 +1,36 @@
+{
+  "name": "food-menu",
+  "version": "1.0.0",
+  "description": "Vanila JS Application",
+  "main": "server.js",
+  "scripts": {
+    "js": "browserfiy src/js/index.js -d -t babelify -o build/bundle.js",
+    "js:w": "watchify src/js/index.js -d -v -t babelify -o build/bundle.js",
+    "scss": "node-sass src/scss/styles.scss --output-style compressed -o build --source-map-embed --source-map-contents",
+    "scss:w": "npm run scss -- --watch",
+    "build": "npm run js && npm run scss",
+    "serve": "npm run js:w -- & > /dev/null 2>&1; npm run scss:w -- & > /dev/null 2>&1; lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zevwl/food-menu.git"
+  },
+  "author": "zevwl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zevwl/food-menu/issues"
+  },
+  "homepage": "https://github.com/zevwl/food-menu#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.5.3",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "bulma": "0.0.12"
+  }
+}
